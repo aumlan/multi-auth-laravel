@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+//(3)
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
@@ -30,7 +31,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('admin.login');
+        return view('admin.login');  //admin login form view
     }
 
     protected function guard()

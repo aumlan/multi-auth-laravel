@@ -22,11 +22,14 @@ Auth::routes();
 /**
  * Default Guard. User
  */
+// This is default HomeController. Redirect to User Home/Dashboard.
+// middleware('auth') = check default 'web' guard
 Route::get('/home', 'HomeController@index')->middleware('auth')->name('home');
 
 /**
  * Admin Routes
  */
+//(2)
 Route::namespace('Admin')->prefix('admin')->group(function() {
     Route::get('login', 'LoginController@showLoginForm')->name('admin.login');
     Route::post('login', 'LoginController@login')->name('admin.login');
@@ -40,3 +43,11 @@ Route::namespace('Admin')->prefix('admin')->group(function() {
         Route::get('home', 'HomeController@index')->name('admin.home');
     });
 });
+
+
+//View List
+// Views->
+// Admin->Layout->app.blade.php;
+//      ->passwords->email.blade.php;
+//                ->reset.blade.php;
+        

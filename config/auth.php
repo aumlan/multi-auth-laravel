@@ -41,9 +41,10 @@ return [
             'provider' => 'users',
         ],
 
+        //(1) create a Admin guard
         'admin' => [
             'driver' => 'session',
-            'provider' => 'admins',
+            'provider' => 'admins', //table name 'admins'
         ],
 
         'api' => [
@@ -73,12 +74,13 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\User::class, //User model 
         ],
 
+        //(1) create a Admin provider
         'admins' => [
             'driver' => 'eloquent',
-            'model' => App\Admin::class,
+            'model' => App\Admin::class, //Admin model 
         ],
 
         // 'users' => [
@@ -110,9 +112,10 @@ return [
             'throttle' => 60,
         ],
 
+        //(1) create a Admin password reset
         'admins' => [
-            'provider' => 'admins',
-            'table' => 'password_resets',
+            'provider' => 'admins',       // table 'admns'
+            'table' => 'password_resets', // 'admins' table password_reset
             'expire' => 60,
             'throttle' => 60,
         ],

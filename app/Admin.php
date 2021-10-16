@@ -44,6 +44,8 @@ class Admin extends Authenticatable
      * @param  string  $token
      * @return void
      */
+    
+    //(7) call notification class to send Password Reset Link
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ResetPassword($token));
